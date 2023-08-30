@@ -1,0 +1,41 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Array {
+
+ public static void Ascending ( int n, int[] arr){
+
+            boolean bool = true;
+
+            for (int i = 0; i < arr.length - 1; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    bool = false;
+                    break;
+                }
+            }
+
+            if (bool) {
+                System.out.println("Ascending");
+            } 
+
+            else {
+                System.out.println("Not Ascending");
+            }
+            }
+
+            public static void main (String[]args){
+
+                Scanner sc = new Scanner(System.in);
+
+                System.out.println("enter the size : ");
+                int n = sc.nextInt();
+
+                System.out.println("enter the list : ");
+                int[] numbers = new int[n];
+
+                for (int i = 0; i < n; i++) {
+                    numbers[i] = sc.nextInt();
+                }
+                Ascending(n, numbers);
+            }
+        }
