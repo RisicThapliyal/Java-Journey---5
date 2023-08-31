@@ -1,0 +1,43 @@
+import java.util.*;
+import java.io.*;
+
+public class MaximumSubarray
+{
+    public static int maxSub(int arr[], int size)
+    {
+        int maxSum = 0;
+
+        for(int i = 0; i <= size - 1; i++)
+        {
+            int currSum = 0;
+            for(int j = i; j <= size - 1; j++)
+            {
+                currSum += arr[j];
+
+                if(currSum > maxSum)
+                {
+                    maxSum = currSum;
+                }
+            }
+        }
+
+        return maxSum;
+    }
+
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter size of array: ");
+        int size = sc.nextInt();
+        int[] arr = new int[size];
+
+        System.out.println("Enter elements of array: ");
+        for(int i = 0; i < size; i++)
+        {
+            arr[i] = sc.nextInt();
+        }
+
+        System.out.println("Maximum SubArray Sum: " + maxSub(arr, size));
+    }
+}
